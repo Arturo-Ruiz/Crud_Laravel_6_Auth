@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
+    @if (Auth::check())
+
     <div class="row">
         <div class="col-md-12">
             <h1 class="page-header text-center">CRUD Laravel 6 con Autenticación</h1>
@@ -48,6 +50,10 @@
         </div>
 
     </div>
+    @else
+    <h1 class="text-center">Deber de Iniciar sesion para continuar</h1>
+    @endif
+
 </div>
 @endsection
 
