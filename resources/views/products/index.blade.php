@@ -5,7 +5,7 @@
         <div class="col-md-12">
             <h1 class="page-header text-center">CRUD Laravel 6 con Autenticación</h1>
         </div>
-
+listado
         <div class="col-md-8">
 
         </div>
