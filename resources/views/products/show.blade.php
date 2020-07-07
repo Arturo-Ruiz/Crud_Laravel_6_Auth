@@ -12,7 +12,10 @@
             <hr>
             <br>
         <div class="col-md-8">
-            <h2>{{ $product->name }}</h2>
+            <h2>{{ $product->name }}
+                <a class="btn btn-warning pull-right" href="{{ route('products.edit', $product->id)}}">Editar</a>
+            </h2>
+
             <p>{{ $product->short }}</p>
             {!! $product->body !!}
         </div>

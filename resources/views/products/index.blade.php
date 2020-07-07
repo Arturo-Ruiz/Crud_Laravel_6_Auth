@@ -29,9 +29,12 @@
                             {{$product->short}}
                         </td>
                         <td>
-                            <a href="{{ route('products.show', $product->id)}}">Ver</a>
+                            <a class="btn btn-info" href="{{ route('products.show', $product->id)}}">Ver</a>
                         </td>
-                        <td>Editar</td>
+                        <td>
+                            <a class="btn btn-warning" href="{{ route('products.edit', $product->id)}}">Editar</a>
+
+                        </td>
                         <td>Borrar</td>
                     </tr>
                     @endforeach
