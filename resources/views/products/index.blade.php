@@ -37,7 +37,15 @@
                             <a class="btn btn-warning" href="{{ route('products.edit', $product->id)}}">Editar</a>
 
                         </td>
-                        <td>Borrar</td>
+                        <td>
+                            <form action="{{ route('products.destroy',$product->id) }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button class="btn btn-danger">Borrar</button>
+
+
+                            </form>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
