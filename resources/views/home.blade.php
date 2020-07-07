@@ -15,6 +15,7 @@
                     @endif
 
                         Usted ha iniciado sesion correctamente
+                        <a href="{{ route('products.index') }}">Ir Al Listado de Productos</a>
                 </div>
             </div>
         </div>
