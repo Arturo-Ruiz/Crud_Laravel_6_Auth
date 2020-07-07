@@ -12,6 +12,12 @@
             <hr>
             <br>
         <div class="col-md-8">
+    @if (auth()->user()->name == 'Arturo')
+    <h1>{{auth()->user()->name}}</h1>
+    @endif
+
+
+
             <h2>Listado de Productos
                 <a href="{{ route('products.create') }}" class="btn btn-primary pull-right">Nuevo</a>
             </h2>
