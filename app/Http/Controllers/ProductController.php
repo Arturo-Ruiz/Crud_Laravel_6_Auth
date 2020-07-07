@@ -18,7 +18,12 @@ class ProductController extends Controller
 
     public function destroy($id){
         $product = Product::find($id);
-        $product->delete();
-        return back()->with('info', 'El producto Fue Eliminado');
+        
+        return view('products.edit', compact('product'));
+    }
+
+    public function edit($id){
+        $product = Product::find($id);
+        return view('products.show', compact('product'));
     }
 }
