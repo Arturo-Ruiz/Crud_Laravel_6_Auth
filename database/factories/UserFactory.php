@@ -5,6 +5,7 @@
 use App\User;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
+use App\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +30,7 @@ $factory->define(User::class, function (Faker $faker) {
 
 $factory->define(Product::class, function (Faker $faker) {
     return [
-        'name'  => $faker->setence(2),
+        'name'  => $faker->text(5),
         'short' => $faker->text(140),
         'body'  => $faker->text(900),
     ];
