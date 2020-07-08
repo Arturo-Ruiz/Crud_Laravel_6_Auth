@@ -18,6 +18,14 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request){
 
+        $product = new Product;
+        $product->name  =  $request->name;
+        $product->short =  $request->short;
+        $product->body  =  $request->body;
+
+        $product->save();
+        return redirect()->route('products.index')->with('info', 'El Producto Fue Creado Correctamente');
+
     }
 
     public function show($id){
