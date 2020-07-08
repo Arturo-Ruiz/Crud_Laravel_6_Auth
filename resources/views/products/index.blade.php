@@ -12,6 +12,8 @@
             <hr>
             <br>
         <div class="col-md-8">
+
+            
     @if (auth()->user()->name == 'Arturo')
     <h1>{{auth()->user()->name}}</h1>
     @endif
