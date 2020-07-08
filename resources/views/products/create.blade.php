@@ -15,7 +15,9 @@
             <h2>Nuevo Producto
                 <a class="btn btn-primary pull-right" href="{{ route('products.index')}}">Listado</a>
             </h2>
-
+            {!! Form::open( ['route'=>'products.store']) !!}
+            @include('products.fragment.form')
+            {!! Form::close() !!}
 
         </div>
         <div class="col-md-4">
