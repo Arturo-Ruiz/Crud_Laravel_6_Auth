@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Http\Requests\ProductRequest;
 class ProductController extends Controller
 {
     public function index(){
@@ -11,9 +12,17 @@ class ProductController extends Controller
         return view('products.index', compact('products'));
     }
 
+    public function store(ProductRequest $request){
+        return 'Producto Gruadado';
+    }
+
     public function show($id){
         $product = Product::find($id);
         return view('products.show', compact('product'));
+    }
+
+    public function update(ProductRequest $request, $id){
+        return 'Producto asdee '.$id;
     }
 
     public function destroy($id){
