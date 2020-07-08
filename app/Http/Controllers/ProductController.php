@@ -5,15 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Http\Requests\ProductRequest;
+use Illuminate\Support\Facades\DB;
+
 class ProductController extends Controller
 {
     public function index(){
-        $products = Product::orderBy('id', 'DESC')->paginate();
+        // $products = Product::orderBy('id', 'DESC')->paginate();
+        // $products = Product::where('name', 'S')->orderBy('name', 'desc')->paginate(5);
+        $products = Product::orderBy('id', 'DESC')->paginate(8  );
         return view('products.index', compact('products'));
     }
 
     public function store(ProductRequest $request){
-        return 'Producto Gruadado';
+
     }
 
     public function show($id){
@@ -22,7 +26,14 @@ class ProductController extends Controller
     }
 
     public function update(ProductRequest $request, $id){
-        return 'Producto asdee '.$id;
+        $product = Product::find($id);
+        $product->name  =  $request->name;
+        $product->short =  $request->short;
+        $product->body  =  $request->body;
+
+        $product->save();
+        return redirect()->route('products.index')->with('info', 'El Producto Fue Actualizado');
+
     }
 
     public function destroy($id){
