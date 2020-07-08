@@ -15,6 +15,8 @@
             <h2>Editar Producto
                 <a class="btn btn-primary pull-right" href="{{ route('products.index')}}">Listado</a>
             </h2>
+            @include('products.fragment.error')
+
             {!! Form::model($product, ['route'=>['products.update', $product->id],'method'=>'PUT']) !!}
             @include('products.fragment.form')
             {!! Form::close() !!}
